@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body{
+    /* 기본설정 */
+    font-family: 'Raleway', sans-serif;
+    color: #222;
+    line-height: 1.5em;
+    font-weight: 300;
+}
+
+a{
+    color: #222;
+    text-decoration: none;
+}
+.container{
+    border: 1px solid red;
+    /* flex가 뭔지 알아보기 */
+    display: flex;
+    /* 수평 중앙 */
+    justify-content: center;
+    /* 수직 중앙 */
+    align-items: center;
+    height: 100vh;
+    
+}
+.icon{
+    position: relative;
+    /* 좌표잡기 */
+    width: 125px;
+    height: 125px;
+    /* 인라인 태그는 좌우 마진 가능 */
+    margin: 10px;
+}
+.icon span{
+    /* 위의 요소의 자손이됨 */
+    position: absolute;
+    background-color: black;
+    color: white;
+    width: 300px;
+    top: -80px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* display: none; */
+    opacity: 0;
+    transition: 0.5s;
+    /* 자리는 있으나 안보임 */
+    visibility: hidden;
+}
+
+.icon span::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg) translateX(-50%);
+    bottom: -5px;
+    left: 50%;
+}
+
+.icon:hover span {
+    /* display: block; */
+    opacity: 1;
+    visibility: visible;
+}
